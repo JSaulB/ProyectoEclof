@@ -1,8 +1,37 @@
 import { Link, useNavigate} from "react-router-dom"
 import axios from 'axios'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect} from 'react'
 import Mensaje from "./Alerts"
+import { jwtDecode } from 'jwt-decode'
 export const Login = ()=>{
+
+    
+    
+ const handleTokenExpiration = () => {
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      try {
+        const decodedToken = jwtDecode(token);  
+        const expirationDate = decodedToken.exp * 1000;  
+        const currentDate = new Date().getTime();    
+        if (currentDate > expirationDate) {  
+          localStorage.removeItem('token');  
+        } else { 
+          navigate('/dashboard'); 
+        }  
+      } catch (error) { 
+        console.error(error); 
+      }  
+    }  
+  };
+  
+  
+  useEffect(() => {
+  
+    handleTokenExpiration();
+  
+  }, []);
 
 
     const [mensaje, setMensaje] =  useState({})

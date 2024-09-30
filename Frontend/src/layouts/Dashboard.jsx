@@ -19,10 +19,11 @@ export const Dashboard = () => {
     const handleExit = () => {
         localStorage.removeItem("token")
     }
+    
 
     return (
-        <div className="flex h-screen bg-gray-100">
-            <nav className="w-64 bg-gray-900 text-white flex flex-col">
+        <div className="flex flex-col md:flex-row min-h-screen bg-gray-100">
+            <nav className="w-64 bg-gray-900 text-white flex flex-col ">
                 <div className="p-4">
                     <Link to="/dashboard">
                         <img src="/src/assets/eclofLogo.png" alt="ECLOF Logo" className="w-20 h-auto mx-auto" />
@@ -64,7 +65,7 @@ export const Dashboard = () => {
                         
                     </button>
                 </header>
-                <main className="flex-1 p-6">
+                <main className="flex-1 p-6 overflow-auto">
                     <Outlet />
                 </main>
             </div>

@@ -9,6 +9,7 @@ import axios from 'axios';
 import { MdArrowBack } from "react-icons/md";
 import { GrLinkNext } from "react-icons/gr";
 import { FaStepForward } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 export const Tabla = () => {
   const navigate = useNavigate();
@@ -112,7 +113,7 @@ export const Tabla = () => {
         <input
           type="text"
           name="apellido"
-          placeholder="Apellido..."
+          placeholder="Apellido/Grupo..."
           value={searchTerm.apellido}
           onChange={handleSearchChange}
           className="p-2 border rounded shadow-lg w-1/4"
@@ -154,6 +155,12 @@ export const Tabla = () => {
                   <td className="">{usuario.codigo}</td>
                   <td className="">
                     <div className="flex justify-center items-center space-x-4">
+                    <button
+                        className="p-2 hover:bg-gray-700 rounded-full"
+                        onClick={() => openModal('ver', usuario)}
+                      >
+                        <CgProfile size={24} />
+                      </button>
                       <button
                         className="p-2 hover:bg-gray-700 rounded-full"
                         onClick={() => openModal('actualizar', usuario)}
@@ -166,6 +173,7 @@ export const Tabla = () => {
                       >
                         <RiDeleteBinLine size={24} />
                       </button>
+                     
                     </div>
                   </td>
                 </tr>

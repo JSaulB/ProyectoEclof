@@ -18,10 +18,14 @@ export const Inicio = () =>{
                 En la lista de los usuarios registrados, también existen dos acciones:
             </p>
             <p className="p-3">
-                1. Actualizar Usuario: Se puede actualizar la información del usuario en cuestión, pero no podrá actualizar el código.
+                <strong>1. Ver Usuario:</strong> Se puede ver toda la información del usuario en cuestión, esto incluye los datos personales,
+                también la fecha de creación del usuario, y la fecha si en alguna ocasión se actualizó sus datos.
             </p>
             <p className="p-3">
-                2. Eliminar Usuario: Se puede eliminar el usuario de forma permanente.
+                <strong>2. Actualizar Usuario:</strong> Se puede actualizar la información del usuario en cuestión, pero no podrá actualizar el código.
+            </p>
+            <p className="p-3">
+                <strong>3. Eliminar Usuario:</strong> Se puede eliminar el usuario de forma permanente.
             </p>
         </div>
 
